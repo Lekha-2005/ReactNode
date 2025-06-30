@@ -14,7 +14,7 @@ function App() {
 
 
   const getAll = async()=>{
-    await axios.get("http://localhost:3241/users")
+    await axios.get("https://reactnodebackend-o0x5.onrender.com/users")
     .then((res) => {
       setFilters(res.data);
       setUsers(res.data);
@@ -34,7 +34,7 @@ function App() {
     {
       const isConfirm=window.confirm("Are you sure you want to delete?");
       if(isConfirm){
-      await axios.delete(`http://localhost:3241/users/${id}`).then((res)=>{
+      await axios.delete(`https://reactnodebackend-o0x5.onrender.com/users/${id}`).then((res)=>{
         setFilters(res.data);
         setUsers(res.data);
       })
@@ -54,11 +54,11 @@ function App() {
     const handleSubmit= async(e)=>{
       e.preventDefault();
       if(userD.id){
-        await axios.patch(`http://localhost:3241/users/${userD.id}`,userD).then((res)=>{
+        await axios.patch(`https://reactnodebackend-o0x5.onrender.com/users/${userD.id}`,userD).then((res)=>{
           console.log(res);
         });
       }else{
-      await axios.post("http://localhost:3241/users",userD).then((res)=>{
+      await axios.post("https://reactnodebackend-o0x5.onrender.com/users",userD).then((res)=>{
         console.log(res);
       });
     }
